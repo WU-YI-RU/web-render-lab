@@ -64,6 +64,10 @@ The engine reads the source image's pixels with `getImageData()`. If you point `
 - Serve the folder instead of double-clicking the file (`python -m http.server`, or any static server) — this is also how it'll actually run once deployed, so it's the more representative way to test anyway.
 - Or inline the image as a `data:` URI instead of a path — `data:` URIs don't have a cross-origin identity, so they never taint the canvas. `demo.html` in this repo does exactly that, which is why it works straight off a double-click.
 
+## Earlier iteration
+
+[`legacy-demo.html`](legacy-demo.html) is a snapshot of this technique from before the soft-edge fix and the `contrast` option existed: hard 42px repel cutoff with linear falloff (the ring artifact described above), flat random particle size/alpha, and the original hover-to-reveal / hold / fade interaction it was first built for (rather than the always-on engine in `demo.html`). Kept as a working before/after reference rather than deleted — hover the dashed box to compare the feel directly against `demo.html`.
+
 ## License
 
 MIT — see the repo root [LICENSE](../LICENSE).
